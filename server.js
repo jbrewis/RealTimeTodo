@@ -22,6 +22,9 @@ db.once('open', () => {
 	console.log( '+++Gethyl connected to mongoose')
 })
 
+var routes = require('./api/routes/todoListRoutes'); //importing route
+routes(app); //register the route
+
 var serve = http.createServer(app);
 var io = socketServer(serve);
 serve.listen(3000,()=> {console.log("+++Gethyl Express Server with Socket Running!!!")})
@@ -86,5 +89,7 @@ io.on('connection', function (socket) {
 			}
 		})
 	})
-	
+	exports.socket = socket
 });
+exports.serve = serve
+exports.io = io
