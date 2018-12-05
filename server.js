@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const autoIncrement = require('mongoose-auto-increment')
 const http = require('http')
 const socketServer =require('socket.io')
+var argv = require('optimist').argv;
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(bodyParser.json())
 
 // MONGOOSE CONNECT
 // ===========================================================================
-mongoose.connect('mongodb://localhost:27017/local')
+mongoose.connect('mongodb://' + argv.be_ip + ':80/my_database');
 
 var db = mongoose.connection
 db.on('error', ()=> {console.log( '---Gethyl FAILED to connect to mongoose')})
