@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 // MONGOOSE CONNECT
 // ===========================================================================
-mongoose.connect('mongodb://10.154.0.2:27017/local')
+mongoose.connect('mongodb://localhost:27017/local')
 
 var db = mongoose.connection
 db.on('error', ()=> {console.log( '---Gethyl FAILED to connect to mongoose')})

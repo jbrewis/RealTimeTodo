@@ -36,7 +36,7 @@ export  class Layout extends React.Component{
 	   super(props)
 	   const {dispatch} = this.props
 	//    dispatch(loadInitialData())
-	   socket = io.connect("http://localhost:3000")
+	   socket = io.connect("http://10.154.0.4:3000")
 	   console.dir(socket)
 	   dispatch(loadInitialDataSocket(socket))
 	   
