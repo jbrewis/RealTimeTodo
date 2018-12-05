@@ -1,4 +1,4 @@
-var Server = require('../../server')
+var Server = require('../../server.js')
 
 var mongoose = require('mongoose'),
   item = mongoose.model('ToDo');
