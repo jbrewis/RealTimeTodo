@@ -22,6 +22,10 @@ db.once('open', () => {
 	console.log( '+++Gethyl connected to mongoose')
 })
 
+app.get('/', function(req, res) {
+	res.sendFile('home/RealTimeTodo/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
 var routes = require('./api/routes/todoListRoutes'); //importing route
 routes(app); //register the route
 
